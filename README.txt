@@ -8,12 +8,13 @@ PAGES
 - players.html     Zidane, Maya, Seth, and Samory
 - pathway.html     Development stages and coaching method
 - tiers.html       Tier 1, Tier 2, and Tier 3
+- accelerant.html  Private 10-month IQ, strength, and technique program
 - film-room.html   Full private clips and embedded official match film
 - contact.html     Application, phone, and email
 
 SHARED FILES
 - styles.css       Complete responsive design
-- site.js          Exact-frame video previews and fallback handling
+- site.js          Video previews, progression filters, and seasonal pricing tabs
 - media/           Images and local MP4 training clips
 - og.png           Social-sharing image
 
