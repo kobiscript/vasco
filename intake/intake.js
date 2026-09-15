@@ -46,7 +46,7 @@ form.addEventListener("submit", (event) => {
 
   const { player, text } = responseText();
   const subject = `Vasco Da Lor personal training intake - ${player}`;
-  const mailto = `mailto:Roger@vascodalor.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+  const mailto = `mailto:support@VDLTraining.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
   status.textContent = "Your email application is opening. Review the completed response and press Send.";
   window.location.href = mailto;
 });
