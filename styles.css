@@ -68,6 +68,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   letter-spacing: .12em;
   text-transform: uppercase;
 }
+.text-link.is-disabled {
+  color: rgba(255, 255, 255, .55);
+  border-bottom-style: dashed;
+  cursor: not-allowed;
+}
 
 .site-header {
   position: sticky;
