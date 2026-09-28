@@ -863,7 +863,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .trial-card { padding: 42px; background: var(--gold); }
 .trial-card h2 { margin: 0 0 18px; font-size: clamp(42px, 5vw, 68px); line-height: .9; letter-spacing: -.055em; }
 .trial-card p { max-width: 600px; line-height: 1.65; }
-.trial-intake-link { margin-top: 24px; color: var(--ink); }
+.trial-intake-link { margin: 24px 18px 0 0; color: var(--ink); }
 
 .intake-hero {
   padding: 92px 0 72px;
@@ -942,8 +942,39 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .intake-button-row .button { min-width: 0; border: 0; cursor: pointer; }
 .intake-secondary { background: rgba(255, 255, 255, .55); }
 
+.enrollment-hero {
+  padding: 92px 0 72px;
+  background:
+    linear-gradient(112deg, rgba(7, 19, 30, .97) 0%, rgba(7, 19, 30, .89) 63%, rgba(123, 30, 22, .84) 100%),
+    radial-gradient(circle at 80% 25%, rgba(211, 164, 59, .35), transparent 29%);
+  color: var(--paper);
+}
+.enrollment-hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 72px; align-items: end; }
+.enrollment-hero h1 { margin: 0; font-size: clamp(58px, 7.4vw, 106px); line-height: .82; letter-spacing: -.065em; }
+.enrollment-hero h1 em { color: var(--gold); font-style: normal; }
+.enrollment-hero p:not(.kicker) { max-width: 620px; margin: 28px 0 0; color: #c5cdd1; font-size: 15px; line-height: 1.65; }
+.enrollment-step-list { display: grid; border-top: 1px solid var(--line-light); }
+.enrollment-step-list span { padding: 15px 4px; border-bottom: 1px solid var(--line-light); color: var(--gold-light); font-size: 9px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.enrollment-preferences { grid-template-columns: 1fr .8fr 1fr; }
+.payment-schedule-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 18px 0; }
+.payment-schedule-grid article { padding: 22px; border: 1px solid #d8d1c1; background: #f7f4ec; }
+.payment-schedule-grid span { color: var(--red); font-size: 9px; font-weight: 900; letter-spacing: .11em; }
+.payment-schedule-grid ol { margin: 16px 0 0; padding-left: 20px; color: #34434c; font-size: 12px; line-height: 1.8; }
+.apparel-note { margin: 20px 0; padding: 17px 19px; border-left: 4px solid var(--gold); background: #f7f4ec; color: #34434c; font-size: 11px; line-height: 1.65; }
+.training-day-choice { display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.training-day-choice legend { margin-bottom: 12px; color: var(--red); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.training-day-choice label { display: flex; align-items: center; gap: 9px; min-height: 54px; padding: 12px; border: 1px solid #d3ccbd; background: #f7f4ec; color: var(--ink); font-size: 12px; font-weight: 800; }
+.training-day-choice input { width: 18px; height: 18px; accent-color: var(--red); }
+.enrollment-notes-grid { margin: 20px 0; }
+.enrollment-document-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+.enrollment-document-grid article { min-height: 220px; display: flex; flex-direction: column; padding: 23px; background: var(--ink); color: var(--paper); }
+.enrollment-document-grid article > span { color: var(--gold); font-size: 11px; font-weight: 900; }
+.enrollment-document-grid h3 { margin: 42px 0 10px; font-size: 21px; text-transform: uppercase; }
+.enrollment-document-grid p { margin: 0 0 20px; color: #acb7bd; font-size: 11px; line-height: 1.6; }
+.enrollment-document-grid small { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line-light); color: var(--gold-light); font-size: 8px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+
 @media print {
-  .site-header, .site-footer, .intake-hero, .intake-intro, .intake-actions { display: none !important; }
+  .site-header, .site-footer, .intake-hero, .enrollment-hero, .intake-intro, .intake-actions { display: none !important; }
   body, .intake-section { background: #fff; }
   .section { padding: 0; }
   .shell, .intake-shell { width: 100%; max-width: none; }
@@ -1084,6 +1115,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .power-one-standard { gap: 20px; padding: 26px; }
   .intake-hero-grid, .intake-intro, .intake-actions { grid-template-columns: 1fr; }
   .intake-hero-copy { padding: 28px 0 0; border-left: 0; border-top: 1px solid var(--line-light); }
+  .enrollment-hero-grid { grid-template-columns: 1fr; gap: 34px; }
+  .enrollment-preferences { grid-template-columns: 1fr; }
+  .training-day-choice { grid-template-columns: repeat(3, 1fr); }
+  .enrollment-document-grid { grid-template-columns: 1fr; }
+  .enrollment-document-grid article { min-height: 180px; }
   .form-grid-four, .form-grid-three { grid-template-columns: 1fr 1fr; }
   .span-4 { grid-column: span 2; }
   .priority-choice-grid { grid-template-columns: 1fr; }
@@ -1197,6 +1233,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .accelerant-close { padding-block: 62px; }
   .intake-hero { padding: 62px 0 52px; }
   .intake-hero h1 { font-size: 52px; }
+  .enrollment-hero { padding: 62px 0 52px; }
+  .enrollment-hero h1 { font-size: 52px; }
+  .payment-schedule-grid, .training-day-choice { grid-template-columns: 1fr; }
   .intake-form-section { padding: 24px 18px; }
   .intake-form-heading { grid-template-columns: 44px 1fr; gap: 13px; }
   .intake-form-heading > span { width: 44px; height: 44px; }
