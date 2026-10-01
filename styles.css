@@ -1286,7 +1286,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .intake-hero h1 { font-size: 52px; }
   .enrollment-hero { padding: 62px 0 52px; }
   .enrollment-hero h1 { font-size: 52px; }
-  .enrollment-hero-media { min-height: 430px; }
+  .enrollment-hero-media { min-height: 0; aspect-ratio: 1 / 1; }
   .enrollment-step-list { grid-template-columns: 1fr 1fr; }
   .enrollment-step-list span { border-right: 0; border-bottom: 1px solid var(--line-light); }
   .enrollment-step-list span:nth-child(odd) { border-right: 1px solid var(--line-light); }
