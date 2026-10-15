@@ -1370,6 +1370,26 @@ button, a { -webkit-tap-highlight-color: transparent; }
   --futsal-blue: #9ed3df;
   background: var(--futsal-cream);
 }
+.futsal-scroll-progress {
+  width: 100%;
+  height: 4px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--futsal-coral);
+  pointer-events: none;
+}
+.futsal-motion .futsal-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+.futsal-motion .futsal-reveal-delay { transition-delay: .12s; }
+.futsal-motion .futsal-reveal-delay-two { transition-delay: .24s; }
+.futsal-motion .futsal-reveal.is-visible { opacity: 1; transform: translateY(0); }
 .futsal-page .site-header { background: rgba(3, 26, 45, .97); }
 .futsal-page h1,
 .futsal-page h2,
@@ -1535,12 +1555,129 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .futsal-basics-grid span { color: var(--futsal-coral); font-size: 12px; font-weight: 900; letter-spacing: .16em; }
 .futsal-basics-grid h3 { margin: auto 0 15px; font-size: 27px; line-height: .95; letter-spacing: -.04em; }
 .futsal-basics-grid p { margin: 0; color: #566873; font-size: 12px; line-height: 1.7; }
+.futsal-basics-grid article {
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+}
+.futsal-basics-grid article::after {
+  content: "";
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  right: -35px;
+  top: -35px;
+  border: 1px solid rgba(230,81,69,.35);
+  border-radius: 50%;
+  transition: transform .35s ease;
+}
+.futsal-basics-grid article:hover { z-index: 2; transform: translateY(-7px); background: #fff; box-shadow: 0 24px 55px rgba(3,26,45,.1); }
+.futsal-basics-grid article:hover::after { transform: scale(1.7); }
+
+.futsal-intelligence {
+  position: relative;
+  overflow: hidden;
+  padding: 106px 0 0;
+  background: var(--futsal-navy-2);
+  color: #fff;
+}
+.futsal-intelligence::before {
+  content: "";
+  width: 640px;
+  height: 640px;
+  position: absolute;
+  right: -270px;
+  top: -310px;
+  border: 1px solid rgba(158,211,223,.14);
+  border-radius: 50%;
+  box-shadow: 0 0 0 90px rgba(158,211,223,.025), 0 0 0 180px rgba(158,211,223,.018);
+}
+.futsal-intelligence-heading {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 62px;
+}
+.futsal-intelligence-heading h2 {
+  margin: 0;
+  font-size: clamp(46px, 6.5vw, 88px);
+  line-height: .82;
+  letter-spacing: -.065em;
+}
+.futsal-intelligence-heading > p {
+  margin: 0 0 5px;
+  padding-left: 24px;
+  border-left: 3px solid var(--futsal-coral);
+  color: #adc0cb;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.futsal-intelligence-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.18);
+  border-top: 1px solid rgba(255,255,255,.18);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+.futsal-intelligence-card {
+  min-height: 430px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 30px 35px;
+  overflow: hidden;
+  background: var(--futsal-navy-2);
+  transition: background .3s ease, transform .3s ease;
+}
+.futsal-intelligence-card::before {
+  content: attr(data-chapter);
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  color: rgba(255,255,255,.025);
+  font-size: 78px;
+  font-weight: 900;
+  line-height: .8;
+  letter-spacing: -.07em;
+  white-space: nowrap;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+.futsal-intelligence-card:hover { background: #0d3048; transform: translateY(-8px); }
+.futsal-intelligence-number { color: var(--futsal-coral); font-size: 15px; font-weight: 900; letter-spacing: .15em; }
+.futsal-intelligence-card > div:last-child { position: relative; z-index: 1; }
+.futsal-intelligence-card span { color: var(--futsal-blue); font-size: 8px; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.futsal-intelligence-card h3 { max-width: 320px; margin: 13px 0 18px; font-size: 31px; line-height: .92; letter-spacing: -.045em; }
+.futsal-intelligence-card p { margin: 0; color: #aebec7; font-size: 12px; line-height: 1.68; }
+.futsal-intelligence-ribbon {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(22px, 4vw, 62px);
+  margin-top: 75px;
+  padding: 22px 28px;
+  background: var(--futsal-coral);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .18em;
+}
+.futsal-intelligence-ribbon i { width: 7px; height: 7px; border-radius: 50%; background: var(--futsal-navy); }
 
 .futsal-pathway { padding: 105px 0 115px; overflow: hidden; background: var(--futsal-navy); color: #fff; }
 .futsal-pathway-heading { display: grid; grid-template-columns: 1.12fr .88fr; gap: 70px; align-items: end; margin-bottom: 58px; }
 .futsal-pathway-heading > p { margin: 0 0 4px; padding-left: 24px; border-left: 3px solid var(--futsal-coral); color: #aebdc6; font-size: 14px; line-height: 1.7; }
 .futsal-tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); box-shadow: 0 35px 80px rgba(0,0,0,.24); }
 .futsal-tier-card { min-height: 690px; display: flex; flex-direction: column; padding: 27px 29px 30px; color: var(--futsal-navy); }
+.futsal-tier-card { transition: transform .32s ease, box-shadow .32s ease; }
+.futsal-tier-card:hover { position: relative; z-index: 2; transform: translateY(-11px); box-shadow: 0 28px 50px rgba(0,0,0,.2); }
 .futsal-tier-one { background: var(--futsal-coral); color: #fff; }
 .futsal-tier-two { background: #fff; }
 .futsal-tier-three { background: var(--futsal-blue); }
@@ -1605,6 +1742,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .futsal-hero-photo { height: 620px; }
   .futsal-manifesto-grid,
   .futsal-section-heading,
+  .futsal-intelligence-heading,
   .futsal-pathway-heading,
   .futsal-transfer-grid,
   .futsal-kit-grid,
@@ -1617,6 +1755,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .futsal-basics-grid { grid-template-columns: 1fr; }
   .futsal-basics-grid article { min-height: 255px; border-right: 0; border-bottom: 1px solid #c9c5bc; }
   .futsal-basics-grid h3 { margin-top: 54px; }
+  .futsal-intelligence-grid { grid-template-columns: 1fr; }
+  .futsal-intelligence-card { min-height: 320px; }
   .futsal-kit-image { min-height: 600px; }
 }
 
@@ -1630,23 +1770,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .futsal-hero-index span:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.2); }
   .futsal-manifesto,
   .futsal-basics,
+  .futsal-intelligence,
   .futsal-pathway,
   .futsal-transfer,
   .futsal-kit,
   .futsal-close { padding-block: 72px; }
   .futsal-manifesto-grid,
   .futsal-section-heading,
+  .futsal-intelligence-heading,
   .futsal-pathway-heading,
   .futsal-transfer-grid,
   .futsal-kit-grid,
   .futsal-close-grid { gap: 42px; }
   .futsal-manifesto h2,
   .futsal-section-heading h2,
+  .futsal-intelligence-heading h2,
   .futsal-pathway-heading h2,
   .futsal-transfer h2,
   .futsal-kit h2,
   .futsal-close h2 { font-size: 52px; }
   .futsal-tier-card { min-height: 610px; }
+  .futsal-intelligence-ribbon { flex-wrap: wrap; gap: 18px 25px; }
   .futsal-pitch-card { min-height: 440px; }
   .futsal-kit-image { min-height: 460px; }
 }
@@ -1669,11 +1813,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .futsal-keyline span:last-child { border-bottom: 0; }
   .futsal-manifesto h2,
   .futsal-section-heading h2,
+  .futsal-intelligence-heading h2,
   .futsal-pathway-heading h2,
   .futsal-transfer h2,
   .futsal-kit h2,
   .futsal-close h2 { font-size: 43px; }
   .futsal-basics-grid article { padding-inline: 23px; }
+  .futsal-intelligence-card { min-height: 345px; padding-inline: 22px; }
+  .futsal-intelligence-card h3 { font-size: 28px; }
+  .futsal-intelligence-ribbon { justify-content: flex-start; }
   .futsal-tier-card { min-height: 635px; padding: 25px 22px 28px; }
   .futsal-tier-card h3 { font-size: 29px; }
   .futsal-transfer-list { grid-template-columns: 1fr; }
