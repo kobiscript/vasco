@@ -181,6 +181,28 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .link-card-content h3 { margin: 7px 0; font-size: 29px; letter-spacing: -.035em; text-transform: uppercase; }
 .link-card-content p { margin: 0 0 14px; color: #b8c2c7; font-size: 12px; line-height: 1.5; }
 
+.home-futsal-feature {
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  margin-top: 18px;
+  overflow: hidden;
+  background: #031a2d;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.home-futsal-feature-media { min-height: 390px; position: relative; overflow: hidden; }
+.home-futsal-feature-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3,26,45,.08), rgba(3,26,45,.68)); }
+.home-futsal-feature-media img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center 42%; filter: saturate(.72) contrast(1.06); transition: transform .4s ease; }
+.home-futsal-feature-media span { position: absolute; z-index: 2; left: 27px; bottom: 24px; color: #9ed3df; font-size: 8px; font-weight: 900; letter-spacing: .17em; }
+.home-futsal-feature-copy { display: flex; flex-direction: column; justify-content: center; padding: 48px; border-left: 7px solid #e65145; }
+.home-futsal-feature-copy h3 { margin: 0; font-size: clamp(44px, 5vw, 70px); line-height: .82; letter-spacing: -.06em; }
+.home-futsal-feature-copy h3 em { color: #e65145; font-style: normal; }
+.home-futsal-feature-copy > p:not(.kicker) { max-width: 540px; margin: 26px 0; color: #b6c4cc; font-size: 13px; line-height: 1.72; }
+.home-futsal-feature-copy > b { display: flex; justify-content: space-between; gap: 30px; width: fit-content; min-width: 250px; padding: 15px 0 7px; border-bottom: 1px solid rgba(255,255,255,.55); color: #fff; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
+.home-futsal-feature:hover .home-futsal-feature-media img { transform: scale(1.025); }
+.home-futsal-feature:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+
 .foundation-link-card { background: var(--red); }
 .link-card-placeholder {
   width: 100%;
@@ -1084,6 +1106,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .section-heading, .cta-grid, .feature-player, .maya-profile, .contact-grid, .origin-grid, .definition-grid, .rebuild-band, .progression-heading, .pricing-heading, .accelerant-close-grid, .foundation-hero, .foundation-commitment-grid, .foundation-journey, .foundation-priority-heading, .foundation-game-band { grid-template-columns: 1fr; }
   .section-heading > p:last-child { margin-top: 16px; }
   .link-grid { grid-template-columns: 1fr; }
+  .home-futsal-feature { grid-template-columns: 1fr; }
+  .home-futsal-feature-media { min-height: 430px; }
+  .home-futsal-feature-copy { min-height: 380px; border-left: 0; border-top: 7px solid #e65145; }
   .foundation-hero-copy { min-height: 560px; padding: 62px 34px; }
   .foundation-photo-slot-hero { min-height: 540px; }
   .foundation-fact-grid { grid-template-columns: 1fr 1fr; }
