@@ -1859,3 +1859,322 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .futsal-kit-image::before { font-size: 82px; }
   .futsal-kit-copy dl div { grid-template-columns: 80px 1fr; }
 }
+
+/* Futsal court edition · video-led opening and media rail */
+.futsal-page {
+  --futsal-electric: #4ac5e6;
+  --futsal-gold: #cf9f3c;
+}
+.futsal-hero-cinematic {
+  min-height: calc(100svh - 76px);
+  isolation: isolate;
+  background: #020c14;
+}
+.futsal-hero-cinematic::before { content: none; }
+.futsal-hero-video,
+.futsal-hero-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.futsal-hero-video {
+  z-index: -3;
+  object-fit: cover;
+  object-position: center 50%;
+  filter: saturate(.78) contrast(1.08);
+}
+.futsal-hero-shade {
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(2,12,20,.95) 0%, rgba(2,12,20,.8) 42%, rgba(2,12,20,.16) 77%),
+    linear-gradient(0deg, rgba(2,12,20,.96) 0%, rgba(2,12,20,.05) 53%, rgba(2,12,20,.48) 100%);
+}
+.futsal-hero-cinematic::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(112deg, transparent 0 58%, rgba(74,197,230,.12) 58% 58.15%, transparent 58.15%);
+  pointer-events: none;
+}
+.futsal-hero-courtline {
+  position: absolute;
+  z-index: 0;
+  width: min(52vw, 760px);
+  height: min(52vw, 760px);
+  right: -18vw;
+  top: 50%;
+  border: 2px solid rgba(255,255,255,.18);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.futsal-hero-courtline::before,
+.futsal-hero-courtline::after {
+  content: "";
+  position: absolute;
+  background: rgba(255,255,255,.15);
+}
+.futsal-hero-courtline::before { width: 2px; height: 140%; left: 50%; top: -20%; }
+.futsal-hero-courtline::after { width: 140%; height: 2px; left: -20%; top: 50%; }
+.futsal-hero-stage {
+  min-height: calc(100svh - 76px);
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 50px;
+  align-items: center;
+  padding-block: 70px 135px;
+}
+.futsal-hero-cinematic .futsal-edition {
+  margin: 0 0 48px;
+  color: var(--futsal-electric);
+}
+.futsal-hero-cinematic .futsal-overline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.futsal-hero-cinematic .futsal-overline::before {
+  content: "";
+  width: 44px;
+  height: 3px;
+  background: var(--futsal-gold);
+}
+.futsal-hero-cinematic h1 {
+  max-width: 930px;
+  font-size: clamp(76px, 9.8vw, 150px);
+  line-height: .75;
+  text-shadow: 0 14px 38px rgba(0,0,0,.28);
+}
+.futsal-hero-cinematic h1 em { color: var(--futsal-gold); }
+.futsal-hero-cinematic .futsal-hero-copy > p:not(.futsal-edition, .futsal-overline) {
+  max-width: 610px;
+  color: rgba(255,255,255,.78);
+}
+.futsal-hero-mark {
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  border: 1px solid rgba(255,255,255,.48);
+  border-radius: 50%;
+  background: rgba(2,12,20,.38);
+  color: #fff;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transform: rotate(7deg);
+}
+.futsal-hero-mark span { color: var(--futsal-electric); font-size: 10px; font-weight: 900; letter-spacing: .28em; }
+.futsal-hero-mark b { font-size: 24px; letter-spacing: -.04em; }
+.futsal-hero-cinematic .futsal-hero-index {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-inline: max(24px, calc((100vw - 1180px) / 2));
+  background: rgba(2,12,20,.72);
+  backdrop-filter: blur(13px);
+}
+.futsal-hero-cinematic .futsal-hero-index span { padding-inline: 0 24px; }
+.futsal-hero-cinematic .futsal-hero-index span + span { padding-left: 24px; }
+.futsal-hero-cinematic .futsal-hero-index b { color: var(--futsal-gold); }
+.futsal-hero-cinematic .futsal-hero-index i { color: rgba(255,255,255,.72); font-style: normal; }
+
+.futsal-opening-statement {
+  position: relative;
+  padding: 112px 0 122px;
+  overflow: hidden;
+  background: #fff;
+}
+.futsal-opening-statement::after {
+  content: "05";
+  position: absolute;
+  right: -22px;
+  bottom: -78px;
+  color: rgba(3,26,45,.035);
+  font-size: 280px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.09em;
+}
+.futsal-opening-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: .35fr 1.25fr .6fr;
+  gap: 54px;
+  align-items: start;
+}
+.futsal-opening-grid h2,
+.futsal-media-heading h2 {
+  margin: 0;
+  font-size: clamp(50px, 6.4vw, 88px);
+  line-height: .83;
+  letter-spacing: -.065em;
+}
+.futsal-opening-grid > p:last-child {
+  margin: 2px 0 0;
+  padding-left: 25px;
+  border-left: 3px solid var(--futsal-gold);
+  color: #566873;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.futsal-opening-grid h2 em { color: var(--futsal-navy); }
+
+.futsal-media-stage {
+  padding: 110px 0 90px;
+  overflow: hidden;
+  background: #041522;
+  color: #fff;
+}
+.futsal-media-heading {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 54px;
+}
+.futsal-media-heading h2 em { color: var(--futsal-gold); }
+.futsal-media-heading-side {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: end;
+}
+.futsal-media-heading-side > p {
+  margin: 0;
+  color: #aebdc6;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.futsal-media-controls { display: flex; align-items: center; gap: 12px; }
+.futsal-media-arrow {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.futsal-media-arrow:hover,
+.futsal-media-arrow:focus-visible { border-color: var(--futsal-gold); background: var(--futsal-gold); color: #041522; transform: translateY(-2px); }
+.futsal-media-arrow:disabled { opacity: .34; cursor: default; transform: none; }
+.futsal-media-count { min-width: 59px; color: #8397a3; font-size: 10px; font-weight: 900; letter-spacing: .12em; text-align: center; }
+.futsal-media-count b { color: var(--futsal-gold); }
+.futsal-media-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(420px, 38vw);
+  gap: 18px;
+  padding: 0 max(24px, calc((100vw - 1180px) / 2)) 24px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+}
+.futsal-media-track::-webkit-scrollbar { display: none; }
+.futsal-media-card {
+  min-height: 560px;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  background: #0a2b40;
+}
+.futsal-media-card-wide { grid-column: span 1; }
+.futsal-media-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 34%, rgba(2,12,20,.28) 56%, rgba(2,12,20,.97) 100%);
+  pointer-events: none;
+}
+.futsal-media-card img,
+.futsal-media-card video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  transition: transform .55s cubic-bezier(.22,1,.36,1), filter .4s ease;
+}
+.futsal-media-card video { background: #020c14; }
+.futsal-media-card:hover img { transform: scale(1.035); filter: saturate(1.08); }
+.futsal-media-card > div {
+  position: absolute;
+  z-index: 2;
+  right: 30px;
+  bottom: 28px;
+  left: 30px;
+}
+.futsal-media-card-video > div { bottom: 78px; }
+.futsal-media-card span { color: var(--futsal-electric); font-size: 8px; font-weight: 900; letter-spacing: .18em; }
+.futsal-media-card h3 { max-width: 480px; margin: 11px 0 10px; overflow-wrap: anywhere; font-size: clamp(27px, 2.5vw, 38px); line-height: .9; letter-spacing: -.05em; }
+.futsal-media-card p { max-width: 440px; margin: 0; color: #b8c6cd; font-size: 11px; line-height: 1.55; }
+.futsal-media-footer { display: flex; align-items: center; gap: 26px; margin-top: 18px; color: #6f8490; font-size: 8px; font-weight: 900; letter-spacing: .16em; }
+.futsal-media-line { height: 2px; position: relative; flex: 1; overflow: hidden; background: rgba(255,255,255,.14); }
+.futsal-media-line i { width: 12.5%; height: 100%; display: block; background: var(--futsal-gold); transform-origin: left center; transition: transform .25s ease; }
+
+@media (min-width: 1180px) {
+  .futsal-media-card-wide { min-width: 0; }
+}
+
+@media (max-width: 1040px) {
+  .futsal-hero-stage { grid-template-columns: 1fr; }
+  .futsal-hero-mark { display: none; }
+  .futsal-opening-grid { grid-template-columns: 1fr; gap: 30px; }
+  .futsal-opening-grid > p:last-child { max-width: 680px; }
+  .futsal-media-heading { grid-template-columns: 1fr; gap: 34px; }
+  .futsal-media-heading-side { max-width: 720px; }
+  .futsal-media-track { grid-auto-columns: minmax(420px, 68vw); }
+}
+
+@media (max-width: 760px) {
+  .futsal-hero-cinematic { min-height: 760px; padding-bottom: 0; }
+  .futsal-hero-video { object-position: 58% center; }
+  .futsal-hero-shade {
+    background:
+      linear-gradient(90deg, rgba(2,12,20,.9), rgba(2,12,20,.25)),
+      linear-gradient(0deg, rgba(2,12,20,.98) 0%, rgba(2,12,20,.3) 60%, rgba(2,12,20,.55) 100%);
+  }
+  .futsal-hero-stage { min-height: 760px; align-items: end; padding-block: 70px 212px; }
+  .futsal-hero-cinematic h1 { font-size: clamp(60px, 16vw, 88px); }
+  .futsal-hero-cinematic .futsal-edition { margin-bottom: 32px; }
+  .futsal-hero-cinematic .futsal-hero-index { grid-template-columns: 1fr 1fr; }
+  .futsal-hero-cinematic .futsal-hero-index span { min-height: 70px; padding: 15px 12px; }
+  .futsal-hero-cinematic .futsal-hero-index span + span { padding-left: 12px; }
+  .futsal-opening-statement,
+  .futsal-media-stage { padding-block: 76px; }
+  .futsal-opening-grid h2,
+  .futsal-media-heading h2 { font-size: 51px; }
+  .futsal-media-heading-side { grid-template-columns: 1fr; }
+  .futsal-media-controls { margin-top: 4px; }
+  .futsal-media-track { grid-auto-columns: minmax(310px, 84vw); }
+  .futsal-media-card { min-height: 500px; }
+}
+
+@media (max-width: 520px) {
+  .futsal-hero-stage { padding-bottom: 226px; }
+  .futsal-hero-copy { min-width: 0; }
+  .futsal-hero-cinematic h1 { font-size: 54px; }
+  .futsal-hero-cinematic .futsal-hero-copy > p:not(.futsal-edition, .futsal-overline) { font-size: 13px; }
+  .futsal-opening-grid h2,
+  .futsal-media-heading h2 { font-size: 42px; }
+  .futsal-media-track { grid-auto-columns: 88vw; gap: 11px; padding-inline: 18px; }
+  .futsal-media-card { min-height: 465px; }
+  .futsal-media-card > div { right: 21px; bottom: 23px; left: 21px; }
+  .futsal-media-card-video > div { bottom: 72px; }
+  .futsal-media-card h3 { font-size: 29px; }
+}
