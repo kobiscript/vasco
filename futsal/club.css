@@ -64,10 +64,17 @@
 .af-impact-copy h2 { margin: 24px 0 36px; font-size: clamp(60px, 7vw, 101px); line-height: .78; }
 .af-impact-copy > p:not(.af-eyebrow) { max-width: 650px; margin: 0 0 22px; color: #565e64; font-size: 15px; line-height: 1.82; }
 .af-impact-copy .af-impact-lead { color: var(--af-ink) !important; font-size: 20px !important; font-weight: 750; line-height: 1.55 !important; }
-.af-impact-understanding { display: grid; grid-template-columns: .52fr 1.48fr; gap: 65px; margin-top: 110px; padding: 58px 64px; border-radius: 0 54px 0 54px; background: var(--af-blue-deep); color: #fff; }
-.af-impact-understanding .af-eyebrow { align-self: start; padding-top: 7px; }
+.af-impact-understanding { display: grid; grid-template-columns: minmax(0,.78fr) minmax(420px,1.22fr); gap: 58px; align-items: stretch; margin-top: 110px; padding: 58px 64px; border-radius: 0 54px 0 54px; background: var(--af-blue-deep); color: #fff; }
+.af-impact-understanding-copy { display: flex; flex-direction: column; justify-content: center; }
+.af-impact-understanding .af-eyebrow { margin-bottom: 45px; padding-top: 0; }
 .af-impact-understanding h3 { margin: 0 0 22px; color: #ffdc55; font-size: clamp(31px, 3.8vw, 55px); line-height: .9; }
 .af-impact-understanding p:not(.af-eyebrow) { margin: 0 0 18px; color: #c1c8d8; font-size: 14px; line-height: 1.78; }
+.af-impact-video { position: relative; min-height: 570px; margin: 0; overflow: hidden; border-radius: 0 38px 0 38px; background: #02091c; box-shadow: 0 25px 50px rgba(0,0,0,.28); isolation: isolate; }
+.af-impact-video::after { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(2,8,25,.92)); pointer-events: none; }
+.af-impact-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.af-impact-video figcaption { position: absolute; z-index: 2; left: 32px; right: 32px; bottom: 30px; display: grid; gap: 9px; pointer-events: none; }
+.af-impact-video figcaption span { color: #8bdcf8; font-size: 8px; font-weight: 950; letter-spacing: .17em; }
+.af-impact-video figcaption b { max-width: 470px; color: #fff; font-size: clamp(20px,2.1vw,31px); line-height: 1; }
 .af-impact-question { max-width: 890px; margin: 76px auto 0; text-align: center; }
 .af-impact-question p { margin: 0; color: #34383d; font-size: clamp(22px, 2.7vw, 36px); line-height: 1.38; }
 .af-impact-question strong { color: var(--af-blue); }
@@ -247,6 +254,7 @@
   .af-identity-grid { gap: 68px; }
   .af-impact-photo { min-height: 700px; }
   .af-impact-copy { max-width: 760px; }
+  .af-impact-video { min-height: 520px; }
   .af-hard-truth { grid-template-columns: .58fr 1.42fr; }
   .af-story-copy { max-width: 720px; }
   .af-program-grid { grid-template-columns: 1fr 1fr; }
@@ -286,8 +294,11 @@
   .af-impact-photo figcaption { left: 24px; right: 24px; bottom: 28px; }
   .af-impact-copy h2 { font-size: 59px; }
   .af-impact-copy .af-impact-lead { font-size: 18px !important; }
-  .af-impact-understanding { gap: 24px; margin-top: 72px; padding: 38px 27px; border-radius: 0 38px 0 38px; }
+  .af-impact-understanding { gap: 34px; margin-top: 72px; padding: 38px 27px; border-radius: 0 38px 0 38px; }
+  .af-impact-understanding .af-eyebrow { margin-bottom: 28px; }
   .af-impact-understanding h3 { font-size: 39px; }
+  .af-impact-video { min-height: 430px; border-radius: 0 27px 0 27px; }
+  .af-impact-video figcaption { left: 22px; right: 22px; bottom: 22px; }
   .af-impact-question { margin-top: 58px; text-align: left; }
   .af-impact-question p { font-size: 24px; }
   .af-quick-grid,
